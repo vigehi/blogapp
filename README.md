@@ -1,54 +1,24 @@
+# README
 
-## BLOG APP
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-   - The Blog app will be a classic example of a blog website.
+Things you may want to cover:
 
-## Built With
+* Ruby version
 
-   - Ruby
-   - Ruby on Rails
-   - RSpec, PostgreSQL
+* System dependencies
 
-## Configuration
+* Configuration
 
-To use this project you first need to have installed the following:
+* Database creation
 
-    - Node.js
-    - Ruby
-    - PostgreSQL
-    - Rails
+* Database initialization
 
-    Ruby version
+* How to run the test suite
 
-The version of ruby that is needed for this project is
+* Services (job queues, cache servers, search engines, etc.)
 
-    3.0.2
+* Deployment instructions
 
-Once you have installed them, you need to use the following command to clone the repository:
-
-git clone https://github.com/vigehi/blogapp.git
-
-Usage
-
-Make sure you are in the root directory by using the following command cd blogapp
-
-Use the following command to install all dependecies: npm install bundle install
-
-Finally, use the following command to initialize the live server:
-
-rails s
-## Author
-Edith oga
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the issues page.
-Show your support
-
-Give a star if you like this project!
-Acknowledgments
-
-
-This project is MIT licensed.
+* ...
