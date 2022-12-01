@@ -10,4 +10,4 @@
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, AllowedMethods, AllowedPatterns, IgnoredMethods.
 # AllowedMethods: refine
 Metrics/BlockLength:
-  Max: 50
+  IgnoredMethods: ['describe', 'context']

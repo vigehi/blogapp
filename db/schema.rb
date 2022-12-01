@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# rubocop:disable Metrics/LineLength, Style/StringLiterals
 ActiveRecord::Schema[7.0].define(version: 20_221_201_074_554) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
