@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Hello Rails', text: 'I love rails', commentsCounter: 4, likesCounter: 8) }
+  subject { Post.new(title: 'Hello Rails', text: 'I love rails', comments_counter: 4, likes_counter: 8) }
 
   before { subject.save }
 
@@ -16,20 +16,20 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Comments counter should be valid value integer and greater than zero' do
-    subject.commentsCounter = -5
+    subject.comments_counter = -5
     expect(subject).to_not be_valid
   end
 
   it 'likes counter should be valid value integer and greater than zero' do
-    subject.likesCounter = -5
+    subject.likes_counter = -5
     expect(subject).to_not be_valid
   end
 
   it 'It will displayed to each user 5 comments limit' do
-    expect(subject.commentsCounter).to eql(4)
+    expect(subject.comments_counter).to eql(4)
   end
 
   it 'It will displayed to each user 8 likes limit' do
-    expect(subject.likesCounter).to eql(8)
+    expect(subject.likes_counter).to eql(8)
   end
 end
