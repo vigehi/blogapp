@@ -697,3 +697,96 @@ FOREIGN KEY ("author_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "df7660acfcceec121acf4c740c4882b1dda09635"], ["created_at", "2022-12-08 08:47:56.162312"], ["updated_at", "2022-12-08 08:47:56.162312"]]
   [1m[36mTRANSACTION (25.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2022-12-08 13:13:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.4ms | Allocations: 727)
+Completed 200 OK in 87ms (Views: 41.3ms | ActiveRecord: 0.0ms | Allocations: 6517)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-12-08 13:13:52 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 602.8ms | Allocations: 30164)
+Completed 500 Internal Server Error in 607ms (ActiveRecord: 0.0ms | Allocations: 31480)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <div class="all_users"> 
+    4: <h1>Names of all the users</h1>
+    5:         <% @users.each do |user| %>
+    6:             <a href=<%= "/users/#{user.id}" =%> >  
+    7:                 <div class="user-container">
+    8:                         <img src="<%=user.photo %>" alt="User profile" width="130" height="130"><br>
+  
+app/views/users/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2022-12-08 13:16:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 727)
+Completed 200 OK in 17ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 6517)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-12-08 13:16:50 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  [1m[36mUser Load (40.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb (Duration: 139.1ms | Allocations: 24817)
+Completed 200 OK in 274ms (Views: 100.8ms | ActiveRecord: 40.1ms | Allocations: 41431)
+
+
+Started GET "/users/:1" for 127.0.0.1 at 2022-12-08 13:18:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 80ms (ActiveRecord: 6.4ms | Allocations: 9340)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:1):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/users/:1/posts" for 127.0.0.1 at 2022-12-08 13:18:44 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"id"=>":1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2877)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2957)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4038)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    3: <div class="all_users"> 
+    4:     <h1>Posts by a User</h1>
+    5:     <div class="user-container">
+    6:         <img src=" <%= @user.photo %>" alt="User profile" width="130" height="130"><br>
+    7:             <div class="single-user">
+    8:                 <h2>User Name:  <%= @user.name %></h2><br>
+    9:                 <div class="single-user-insider">
+  
+app/views/posts/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-12-08 13:33:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.8ms | Allocations: 727)
+Completed 200 OK in 105ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 6517)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-12-08 13:33:41 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb (Duration: 76.6ms | Allocations: 24781)
+Completed 200 OK in 202ms (Views: 78.7ms | ActiveRecord: 0.6ms | Allocations: 39098)
+
+
