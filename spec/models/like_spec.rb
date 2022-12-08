@@ -8,5 +8,6 @@ RSpec.describe Like, type: :model do
                     author_id: user.id)
 
     like = Like.new(author_id: user.id, posts_id: post.id)
+    like.save
   end
 end
