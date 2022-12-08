@@ -8,5 +8,6 @@ RSpec.describe Comment, type: :model do
                     author_id: user.id)
 
     comment = Comment.new(author_id: user.id, posts_id: post.id)
+    comment.save
   end
 end
