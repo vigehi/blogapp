@@ -7,8 +7,6 @@ RSpec.describe Comment, type: :model do
     post = Post.new(title: 'Hello Rails', text: 'I love rails', comments_counter: 4, likes_counter: 8,
                     author_id: user.id)
 
-
     comment = Comment.new(author_id: user.id, posts_id: post.id)
-
   end
 end
