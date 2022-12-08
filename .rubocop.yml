@@ -10,6 +10,7 @@ AllCops:
     - "linters.yml"
     - "tests.yml"
     -  "config/initializers/devise.rb"
+    - "vendor/bundle/**/*"
 
 
   DisplayCopNames: true

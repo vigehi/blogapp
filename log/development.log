@@ -611,3 +611,14 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 663ms (Views: 661.4ms | ActiveRecord: 0.0ms | Allocations: 101655)
 
 
+Started GET "/users/:1/posts" for 127.0.0.1 at 2022-12-08 10:26:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Parameters: {"id"=>":1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 547)
+  Rendered layout layouts/application.html.erb (Duration: 387.8ms | Allocations: 43648)
+Completed 200 OK in 407ms (Views: 393.7ms | ActiveRecord: 0.0ms | Allocations: 50774)
+
+
