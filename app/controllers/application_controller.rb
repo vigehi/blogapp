@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  # class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
