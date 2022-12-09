@@ -1,3 +1,5 @@
 class ApplicationController < ActionController::Base
-  # class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def current_user
+    User.first
+  end
 end
