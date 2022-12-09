@@ -1,20 +1,20 @@
 <%= stylesheet_link_tag "application"%>
 
-<div class="all_users"> 
+<div class="all_users">
     <h1>A particular user</h1>
     <a href=<%= "/users/#{@user.id}/posts/" %> >
     <div class="user-container">
 
         <img src=" <%= @user.photo %>" alt="User profile" width="130" height="130"><br>
-       
+
             <div class="single-user">
                 <h2>User Name:  <%= @user.name %></h2><br>
                 <div class="singler-user-p">
                      <p >No.of Posts: <%= @user.posts_counter %></p><br>
                 </div>
             </div>
-    </div>   
-    <a> 
+    </div>
+    <a>
 </div>
 <div class="particular_user">
     <h3>Bio</h3>
@@ -29,9 +29,13 @@
                 <p>Comments: <%= post.comments_counter %>, </p>
                 <p>Likes: <%= post.likes_counter %></p>
             </div>
-        </div>    
+        </div>
     <a>
 <% end %>
 <div class="user-btn">
-  <button type="button">See all posts</button>   
+ <a href=<%= "/users/#{@user.id}/posts/" %> >
+  <button type="button">
+  See all posts
+  </a></button>
+
 </div>
