@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
- 
   def create
     @post = Post.find(params[:id])
 
@@ -9,5 +8,4 @@ class LikesController < ApplicationController
 
     redirect_to user_post_path(current_user, @post)
   end
-
 end
