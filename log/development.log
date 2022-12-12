@@ -790,3 +790,94 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 202ms (Views: 78.7ms | ActiveRecord: 0.6ms | Allocations: 39098)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-09 16:38:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (49.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.5ms | Allocations: 727)
+Completed 200 OK in 42ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 6517)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-12-09 16:38:30 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 75.6ms | Allocations: 24667)
+  Rendered layout layouts/application.html.erb (Duration: 137.7ms | Allocations: 40606)
+Completed 200 OK in 333ms (Views: 140.8ms | ActiveRecord: 50.2ms | Allocations: 56683)
+
+
+Started GET "/users/posts" for 127.0.0.1 at 2022-12-09 16:39:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"posts"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+Completed 404 Not Found in 57ms (ActiveRecord: 2.4ms | Allocations: 8732)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=posts):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/:1" for 127.0.0.1 at 2022-12-09 16:39:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1039)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:1):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/:1/posts" for 127.0.0.1 at 2022-12-09 16:39:21 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.7ms | Allocations: 1017)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:1):
+  
+app/controllers/posts_controller.rb:3:in `index'
+Started GET "/posts" for 127.0.0.1 at 2022-12-09 16:40:05 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-12-09 16:40:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/users/" for 127.0.0.1 at 2022-12-13 01:30:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (53.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 111.3ms | Allocations: 24986)
+  Rendered layout layouts/application.html.erb (Duration: 185.9ms | Allocations: 40953)
+Completed 200 OK in 469ms (Views: 205.2ms | ActiveRecord: 113.5ms | Allocations: 61653)
+
+
+Started GET "/users/:1/posts" for 127.0.0.1 at 2022-12-13 01:55:54 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"id"=>":1"}
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+Completed 404 Not Found in 107ms (ActiveRecord: 47.8ms | Allocations: 11023)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:1):
+  
+app/controllers/posts_controller.rb:3:in `index'
