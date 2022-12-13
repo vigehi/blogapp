@@ -1005,3 +1005,96 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7463976459234551760)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateModels (20221213125259)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (734.5ms)[0m  [1m[35mCREATE TABLE "models" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (94.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_models_on_email" ON "models" ("email")[0m
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_models_on_reset_password_token" ON "models" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221213125259"]]
+  [1m[36mTRANSACTION (19.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (38.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7463976459234551760)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-12-13 16:00:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (80.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 6619)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<UsersController:0x0000000000c0d0>
+Did you mean?  current_model):
+  
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2022-12-13 16:00:20 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (19.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (Duration: 1931.3ms | Allocations: 88290)
+  Rendered layout layouts/application.html.erb (Duration: 2003.8ms | Allocations: 107683)
+Completed 200 OK in 2049ms (Views: 2006.1ms | ActiveRecord: 24.4ms | Allocations: 115139)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-12-13 16:00:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2022-12-13 16:16:26 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 74ms (ActiveRecord: 0.0ms | Allocations: 6509)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-12-13 16:16:27 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 89.8ms | Allocations: 6715)
+  Rendered layout layouts/application.html.erb (Duration: 90.7ms | Allocations: 6816)
+Completed 500 Internal Server Error in 285ms (ActiveRecord: 6.1ms | Allocations: 27290)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User id: nil, name: nil, photo: nil, bio: nil, posts_counter: nil, created_at: nil, updated_at: nil>):
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <%= f.label :email %><br />
+    6:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    7:   </div>
+    8: 
+    9:   <div class="field">
+  
+app/views/devise/sessions/new.html.erb:6
+app/views/devise/sessions/new.html.erb:3
+Started GET "/" for 127.0.0.1 at 2022-12-13 16:18:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 47ms (ActiveRecord: 0.0ms | Allocations: 6532)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-12-13 16:18:02 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 17.7ms | Allocations: 1101)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 74.0ms | Allocations: 5030)
+  Rendered layout layouts/application.html.erb (Duration: 166.6ms | Allocations: 29983)
+Completed 200 OK in 308ms (Views: 244.3ms | ActiveRecord: 8.5ms | Allocations: 50479)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-12-13 16:20:51 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 195)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1237)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 5528)
+Completed 200 OK in 77ms (Views: 71.6ms | ActiveRecord: 0.0ms | Allocations: 6370)
+
+
