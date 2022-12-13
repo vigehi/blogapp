@@ -21,7 +21,7 @@ end
 Capybara.javascript_driver = :selenium_chrome
 
 RSpec.configure do |config|
-  config.fixture_path = "#{::Rails.root}/spec/views"
+  config.fixture_path = "#{Rails.root}/spec/views"
 
   config.use_transactional_fixtures = true
 
