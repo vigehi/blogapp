@@ -20,10 +20,10 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
+
   def destroy
     authorize! :destroy, @comment
     @comment.destroy
     redirect_to comments_path, notice: "Comment was successfully deleted."
   end
-
 end
