@@ -35,6 +35,7 @@ After you're finished please remove all the comments and instructions!
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Future Features](#key-features)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
@@ -188,13 +189,17 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
 - [ ] **[data-remote]**
 - [ ] **[voice recognition]**
 - [ ] **[css animated incoming post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Key Features <a name="key-features"></a>
+
+- [ ] **[devise authorization]**
+- [ ] **[add post comment]**
 
 <!-- CONTRIBUTING -->
 
