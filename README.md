@@ -24,9 +24,6 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
   <h3><b>Blog App</b></h3>
 
 </div>
@@ -38,6 +35,7 @@ After you're finished please remove all the comments and instructions!
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Future Features](#key-features)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
@@ -48,7 +46,6 @@ After you're finished please remove all the comments and instructions!
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -90,15 +87,6 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,7 +180,7 @@ Example:
 
 👤 **Andy Menutti**
 
-- GitHub: [@andym80](hhttps://github.com/andym80)
+- GitHub: [@andym80](https://github.com/andym80)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,13 +189,17 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[data-remote]**
+- [ ] **[voice recognition]**
+- [ ] **[css animated incoming post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Key Features <a name="key-features"></a>
+
+- [ ] **[devise authorization]**
+- [ ] **[add post comment]**
 
 <!-- CONTRIBUTING -->
 
