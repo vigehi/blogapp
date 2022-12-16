@@ -37,6 +37,6 @@ class PostsController < ApplicationController
   def destroy
     authorize! :destroy, @post
     @post.destroy
-    redirect_to posts_path, notice: "Post was successfully deleted."
+    redirect_to posts_path, notice: 'Post was successfully deleted.'
   end
 end
