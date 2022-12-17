@@ -23,6 +23,7 @@ After you're finished please remove all the comments and instructions!
 -->
 
 <div align="center">
+
   <h3><b>Blog App</b></h3>
 
 </div>
@@ -34,6 +35,7 @@ After you're finished please remove all the comments and instructions!
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Future Features](#key-features)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
@@ -178,14 +180,26 @@ Example:
 
 👤 **Andy Menutti**
 
-- GitHub: [@andym80](hhttps://github.com/andym80)
+- GitHub: [@andym80](https://github.com/andym80)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[data-remote]**
+- [ ] **[voice recognition]**
+- [ ] **[css animated incoming post]**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Key Features <a name="key-features"></a>
+
+- [ ] **[devise authorization]**
+- [ ] **[add post comment]**
 
 <!-- CONTRIBUTING -->
 

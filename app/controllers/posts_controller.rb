@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:id])
-    @userposts = Post.where("author_id = #{@user.id}")
+    @userposts = @user.posts.includes(:comments)
+    render json: @posts, status: :ok
   end
 
   def show
     @post = Post.find(params[:id])
+    render json: @posts, status: :ok
     @current_user = current_user
   end
 
@@ -32,5 +34,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def destroy
+    authorize! :destroy, @post
+    @post.destroy
+    redirect_to posts_path, notice: 'Post was successfully deleted.'
   end
 end
